@@ -14,7 +14,7 @@ import static org.junit.Assert.assertTrue;
  */
 public class AnnotationsTest {
 
-    public String acontainer;
+    public String container;
 
     @Rule
     public CatalogRule catalogMagic = new CatalogRule();
@@ -38,6 +38,7 @@ public class AnnotationsTest {
     @Test
     @Catalog(container = "cont3")
     public void testThree() {
+        assertThat(container, is("cont3"));
         assertTrue(true);
     }
 
