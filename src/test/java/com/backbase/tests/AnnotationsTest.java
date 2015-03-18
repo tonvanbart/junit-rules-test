@@ -39,7 +39,6 @@ public class AnnotationsTest {
     @Catalog(container = "cont3")
     public void testThree() {
         assertThat(container, is("cont3"));
-        assertTrue(true);
     }
 
 }
