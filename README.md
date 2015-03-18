@@ -3,8 +3,21 @@ This is a quick experiment with using a JUnit @Rule to add our own custom annota
 but with the added benefit of being able to parameterize exactly what each test method needs to have done (or not done).
 
 In this simple example the annotation just takes some strings, which can later be retrieved inside the test, but the idea would be to have
-potentially complex object trees created (like a Backbase catalog structure).
+potentially complex object trees created (like a Backbase catalog structure). In this scenario in the code snippet below, one could ask
+`catalog.getPage()` and get a fully configured page, including any needed extension items, just by annotating the test method with the items you need.
 
+Sample annotated test method (see src/test/java/cpm/ackbase/annotations/tests/AnnotationsTest):
+```java
+    @Rule
+    public CatalogRule catalog = new CatalogRule();
+
+    @Test
+    @Catalog(page="mypage")
+    public void testMe() {
+        System.out.println("bla");
+        assertThat(catalog.getPagename(), is("mypage"));
+    }
+```
 
 Sample output of running `mvn test`:
 
