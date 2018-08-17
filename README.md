@@ -1,4 +1,7 @@
 ## Custom JUnit annotations
+
+[![Build Status](https://travis-ci.com/tonvanbart/junit-rules-test.svg?branch=master)](https://travis-ci.com/tonvanbart/junit-rules-test)
+
 This is a quick experiment with using a JUnit @Rule to add our own custom annotations to test methods. This would give you similar functionality as @Before,
 but with the added benefit of being able to parameterize exactly what each test method needs to have done (or not done).
 
